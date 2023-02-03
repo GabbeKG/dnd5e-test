@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" type="text/css" href="./style.css"/>
+    </head>
+    <body>
+        <!-- 9 kolumner bredd 10-20 rader hög -->
+        <div class="container grid">
+        <div id="hero-section">
+            <div class="character-name"></div>
+                <div class="char-desc">
+                    <label class="lblDesc">Class: <select id="clsSelect" name="class"></select></label>
+                    <label class="lblDesc">Level: <input type="number" id="level" /></label>
+                    <label class="lblDesc">Player Name: <input type="text" placeholder="Player name"/></label>
+                    <label class="lblDesc">Race: <select name="race"></select></label>
+                    <label class="lblDesc">Alignment: <select id="alignmentSelect" name="alignment"></select></label>
+                    <label class="lblDesc">Experience Points</label>
+                </div>
+            </div>
+            <div class="stat-block">
+                <div class="attribute">Strength</div>
+                <div class="attribute">Dexterity</div>
+                <div class="attribute">Constitution</div>
+                <div class="attribute">Intelligence</div>
+                <div class="attribute">Wisdom</div>
+                <div class="attribute">Charisma</div>
+            </div>
+            <div class="ability-mod">
+                <div class="inspiration abi">insperation</div>
+                <div class="Proficiency-bonus abi">Proficiency Bonus</div>
+                <div class="saving-throws abi">Saving throws</div>
+                <div class="skills abi">Skills</div>
+            </div>
+            <div class="passive-wisdom">Passive wisdom</div>
+            <div class="other-profs-and-languages"></div>
+            <div class="combat-stats"></div>
+            <div class="equipment">
+                <div id="attacks_spells"></div>
+                <div id="inventory"></div>
+            </div>
+            <div id="bio">
+
+            </div>
+            <div id="features_traits"></div>
+
+
+
+        </div>
+        <script src="./dnd.js" defer></script>
+    </body>
+</html>
