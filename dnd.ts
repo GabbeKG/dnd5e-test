@@ -34,3 +34,13 @@ const getOptions = async function() {
     classOptions?.appendChild(option);
   }
 }
+
+interface Character{
+  _charName:string;
+  _class:string;
+_level:number;
+_playerName:string;
+_race:string;
+_alignment:string;
+_stats:[];
+}

@@ -1,114 +1,133 @@
-body{
-    width: 200vh;
-    height: 1100px;
-    background-color: black;
-    color: aliceblue;
-    background-image: url('./img/SCAG_2560x1600_Wallpaper.jpeg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    margin:0 auto;
-}
-.grid{
-    display: grid;
-    grid-template-columns: .125fr;
-    grid-template-areas:"hero hero hero hero hero hero hero hero hero"
-                        "hero hero hero hero hero hero hero hero hero"
-                        "hero hero hero hero hero hero hero hero hero"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability combat combat combat bio bio bio"
-                        "stat ability ability equipment equipment equipment bio bio bio"
-                        "stat ability ability equipment equipment equipment bio bio bio"
-                        "stat ability ability equipment equipment equipment bio bio bio"
-                        "passive passive passive equipment equipment equipment bio bio bio"
-                        "profs profs profs equipment equipment equipment bio bio bio"
-                        "profs profs profs equipment equipment equipment bio bio bio"
-                        "profs profs profs equipment equipment equipment bio bio bio";
-                        
-    gap: 10px;
-    padding: 10px;
-    
-}
-.grid > div{
-    
-    padding: 10px;
-    height: 50px;
+@import url("https://fonts.googleapis.com/css2?family=Metamorphous&family=Space+Mono&display=swap");
 
+body {
+  width: 200vh;
+  height: auto;
+  background-color: black;
+  color: aliceblue;
+  background-image: url("./img/SCAG_2560x1600_Wallpaper.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  font-family: "Metamorphous", cursive;
+  font-family: "Space Mono", monospace;
 }
-#hero-section{
-    grid-area: hero;
-    height: 100px;
-    border: solid 1px blue;
-    grid-row:1/3
-}
-.stat-block{
-    
-    text-align: center;
-    border: solid 1px red;
-    
-}
-.attribute{
-    grid-area: stat;
-    grid-row: 3/10;
-    border: solid 1px darkgreen;
-    height: 35px;
-    margin:auto;
-    padding: 10px;
-    text-align: center;
-}
-.ability-mod{
+.grid {
+  display: grid;
+  grid-template-columns: 0.125fr;
+  grid-template-areas:
+    "hero hero hero hero hero hero hero hero hero"
+    "hero hero hero hero hero hero hero hero hero"
+    "hero hero hero hero hero hero hero hero hero"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability combat combat combat bio bio bio"
+    "stat ability ability equipment equipment equipment bio bio bio"
+    "stat ability ability equipment equipment equipment bio bio bio"
+    "stat ability ability equipment equipment equipment bio bio bio"
+    "passive passive passive equipment equipment equipment bio bio bio"
+    "profs profs profs equipment equipment equipment bio bio bio"
+    "profs profs profs equipment equipment equipment bio bio bio"
+    "profs profs profs equipment equipment equipment bio bio bio";
 
-    grid-area:ability;
-    grid-row: 3;
-    grid-column: 2/span 2;
-    border: solid 1px darkmagenta;
+  gap: 10px;
+  padding: 10px;
 }
-.abi{
-    height:100px;
+.grid > div {
 }
-.passive-wisdom{
-    grid-area:passive;
-    grid-row: 20;
-    border:solid 1px lightgreen;
+#hero-section {
+  grid-area: hero;
+  height: 100px;
+  border: solid 1px blue;
+  grid-row: 1/3;
 }
-.other-profs-and-languages{
-    grid-area:profs;
+.stat-block {
+  display: flex;
+  text-align: center;
+  border: solid 1px red;
+  flex-direction: column;
 }
-.combat-stats{
-    grid-area: combat;
+.attribute {
+  height: 100px;
+  width: 150px;
+  grid-area: stat;
+  grid-row: 3/10;
+  border: solid 10px rgb(83, 83, 83);
+  box-shadow: 0px 0px 40px 5px #812727;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(75, 69, 69);
+  line-height: 10px;
+  border-radius: 10px;
 }
-.equipment{
-    grid-area: equipment;
+.ab-score {
 }
-#bio{
-    grid-area: bio;
+.ab-mod {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  line-height: 15px;
+  background-color: rgb(90, 93, 95);
+  border: solid 10px rgb(122, 122, 122);
+  outline: auto;
+}
+.ab-mod:hover {
+  box-shadow: aqua 0px 0px 10px 5px;
+}
+.ability-mod {
+  grid-area: ability;
+  grid-row: 3;
+  grid-column: 2 / span 2;
+  border: solid 1px darkmagenta;
+}
+.abi {
+  height: 100px;
+}
+.passive-wisdom {
+  grid-area: passive;
+  grid-row: 20;
+  border: solid 1px lightgreen;
+}
+.other-profs-and-languages {
+  grid-area: profs;
+}
+.combat-stats {
+  grid-area: combat;
+}
+.equipment {
+  grid-area: equipment;
+}
+#bio {
+  grid-area: bio;
 }
 
-.char-desc{
-    color: aliceblue;
-    background-color: rgb(78, 77, 77);
-    height: 100%;
-    text-align: center;
-    margin:auto 0;
-    border:solid 1px rgb(0, 211, 248);
-    
-    
-    width:100%;
-}
-.char-desc >label{
-height: 25px;
-padding-top: 10px;;
-/*border:solid 1px red;*/ 
+.char-desc {
+  color: aliceblue;
+  background-color: rgb(78, 77, 77);
+  height: 100%;
+  text-align: center;
+  margin: auto 0;
+  border: solid 1px rgb(0, 211, 248);
 
+  width: 100%;
 }
-.lblDesc{
-    border:solid 1px purple;
+.char-desc > label {
+  height: 25px;
+  padding-top: 10px;
+  /*border:solid 1px red;*/
+}
+.lblDesc {
+  border: solid 1px purple;
 }
 
-.attribute{
-    font-size: large;
+.attribute {
+  font-size: large;
 }
