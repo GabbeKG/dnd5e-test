@@ -37,7 +37,12 @@ body {
   gap: 10px;
   padding: 10px;
 }
+.abi {
+  text-align: center;
+}
 .grid > div {
+  background-color: rgb(90, 93, 95);
+  border: solid 10px rgb(122, 122, 122);
 }
 #hero-section {
   grid-area: hero;
@@ -77,10 +82,10 @@ body {
   line-height: 15px;
   background-color: rgb(90, 93, 95);
   border: solid 10px rgb(122, 122, 122);
-  outline: auto;
+  /*outline: auto;*/
 }
 .ab-mod:hover {
-  box-shadow: aqua 0px 0px 10px 5px;
+  box-shadow: rgb(255, 238, 0) 0px 0px 10px 5px;
 }
 .ability-mod {
   grid-area: ability;
