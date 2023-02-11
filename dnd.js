@@ -36,12 +36,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var alignment = [];
 var _classes = [];
+var races = [];
 console.log("has started");
 var apiClasses = 'https://www.dnd5eapi.co/api/classes/?results';
 var apiAlignment = 'https://www.dnd5eapi.co/api/alignments/?results';
-var getOptions = function () {
+var apiRaces = 'https://www.dnd5eapi.co/api/races/?results';
+getOptions();
+function getOptions() {
     return __awaiter(this, void 0, void 0, function () {
-        var alignRes, align, alignmentOptions, i, option, classRes, _class, classOptions, i, option;
+        var alignRes, align, alignmentOptions, i, option, classRes, _class, classOptions, i, option, raceRes, race, raceOptions, i, option;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch(apiAlignment)];
@@ -79,8 +82,25 @@ var getOptions = function () {
                         option.text = _classes[i].name;
                         classOptions === null || classOptions === void 0 ? void 0 : classOptions.appendChild(option);
                     }
+                    return [4 /*yield*/, fetch(apiRaces)];
+                case 5:
+                    raceRes = _a.sent();
+                    return [4 /*yield*/, raceRes.json()];
+                case 6:
+                    race = _a.sent();
+                    console.log(race);
+                    race.results.map(function (element) {
+                        races.push(element);
+                    });
+                    raceOptions = document.querySelector("#raceSelect");
+                    for (i = 0; i < races.length; i++) {
+                        option = new Option(races[i].name);
+                        option.value = races[i].name;
+                        option.text = races[i].name;
+                        raceOptions === null || raceOptions === void 0 ? void 0 : raceOptions.appendChild(option);
+                    }
                     return [2 /*return*/];
             }
         });
     });
-};
+}
