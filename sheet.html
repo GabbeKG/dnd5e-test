@@ -9,7 +9,7 @@
     <div class="container grid">
       <div id="hero-section">
         <div class="char-desc">
-          <div class="character-name">
+          <div id="character-name">
             <label>Character name:</label
             ><input type="text" placeholder="Name your character..." />
           </div>
@@ -18,14 +18,14 @@
             <select id="clsSelect" name="class"></select
           ></label>
           <label class="lblDesc"
-            >Level: <input type="number" id="level"
+            >Level: <input type="number" id="level" min="1"
           /></label>
           <label class="lblDesc"
             >Player Name: <input type="text" placeholder="Player name"
           /></label>
           <label class="lblDesc"
             >Race:
-            <select name="race"></select
+            <select id="racesSelect" name="race"></select
           ></label>
           <label class="lblDesc"
             >Alignment:
@@ -34,46 +34,56 @@
           <label class="lblDesc">Experience Points</label>
         </div>
       </div>
-      <div class="stat-block">
+      <div class="stat-block wrapper">
         <div class="attribute">
           Strength
           <div>
-            <h2 class="ab-score">15</h2>
+            <select class="ab-score"><option>Ability score</option></select>
             <div class="ab-mod"><h2>+3</h2></div>
           </div>
         </div>
         <div class="attribute">
           Dexterity
           <div>
-            <h2 class="ab-score">15</h2>
+            <select class="ab-score">
+              <option>Ability score</option>
+            </select>
             <div class="ab-mod"><h2>+3</h2></div>
           </div>
         </div>
         <div class="attribute">
           Constitution
           <div>
-            <h2 class="ab-score">15</h2>
+            <select class="ab-score">
+              <option>Ability score</option>
+            </select>
             <div class="ab-mod"><h2>+3</h2></div>
           </div>
         </div>
         <div class="attribute">
           Intelligence
           <div>
-            <h2 class="ab-score">15</h2>
+            <select class="ab-score">
+              <option>Ability score</option>
+            </select>
             <div class="ab-mod"><h2>+3</h2></div>
           </div>
         </div>
         <div class="attribute">
           Wisdom
           <div>
-            <h2 class="ab-score">15</h2>
+            <select class="ab-score">
+              <option>Ability score</option>
+            </select>
             <div class="ab-mod"><h2>+3</h2></div>
           </div>
         </div>
         <div class="attribute">
           Charisma
           <div>
-            <h2 class="ab-score">15</h2>
+            <select class="ab-score">
+            <option>Ability score</option>
+            </select>
             <div class="ab-mod"><h2>+3</h2></div>
           </div>
         </div>

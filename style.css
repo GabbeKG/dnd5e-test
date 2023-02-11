@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Metamorphous&family=Space+Mono&display=swap");
 
 body {
-  width: 200vh;
+  
   height: auto;
   background-color: black;
   color: aliceblue;
   background-image: url("./img/SCAG_2560x1600_Wallpaper.jpeg");
-  background-size: cover;
+  background-size:cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: sticky;
   background-repeat: no-repeat;
   margin: 0 auto;
   font-family: "Metamorphous", cursive;
@@ -16,19 +19,19 @@ body {
   display: grid;
   grid-template-columns: 0.125fr;
   grid-template-areas:
-    "hero hero hero hero hero hero hero hero hero"
-    "hero hero hero hero hero hero hero hero hero"
-    "hero hero hero hero hero hero hero hero hero"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability combat combat combat bio bio bio"
-    "stat ability ability equipment equipment equipment bio bio bio"
-    "stat ability ability equipment equipment equipment bio bio bio"
-    "stat ability ability equipment equipment equipment bio bio bio"
+    "stat stat hero hero hero hero hero hero hero"
+    "stat stat hero hero hero hero hero hero hero"
+    "stat stat hero hero hero hero hero hero hero"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability combat combat combat bio bio bio"
+    "stat stat ability equipment equipment equipment bio bio bio"
+    "stat stat ability equipment equipment equipment bio bio bio"
+    "stat stat ability equipment equipment equipment bio bio bio"
     "passive passive passive equipment equipment equipment bio bio bio"
     "profs profs profs equipment equipment equipment bio bio bio"
     "profs profs profs equipment equipment equipment bio bio bio"
@@ -53,17 +56,19 @@ body {
 .stat-block {
   display: flex;
   text-align: center;
-  border: solid 1px red;
+  border: solid 5px red;
   flex-direction: column;
+  width: 200px;
 }
 .attribute {
-  height: 100px;
-  width: 150px;
+  flex-wrap: wrap;
+  height: 20px;
+  width: 25px;
   grid-area: stat;
-  grid-row: 3/10;
+  grid-row: 3/6;
   border: solid 10px rgb(83, 83, 83);
   box-shadow: 0px 0px 40px 5px #812727;
-  margin: 20px auto;
+  flex-direction: row;
   padding: 10px;
   text-align: center;
   background-color: rgb(75, 69, 69);
@@ -73,13 +78,14 @@ body {
 .ab-score {
 }
 .ab-mod {
+  visibility: hidden;
   text-align: center;
   margin: 0 auto;
   position: relative;
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  line-height: 15px;
+  height: 15px;
+  width: 15px;
+  
   background-color: rgb(90, 93, 95);
   border: solid 10px rgb(122, 122, 122);
   /*outline: auto;*/
@@ -115,6 +121,7 @@ body {
 }
 
 .char-desc {
+  display: flex;
   color: aliceblue;
   background-color: rgb(78, 77, 77);
   height: 100%;
@@ -135,4 +142,14 @@ body {
 
 .attribute {
   font-size: large;
+}
+select{
+  height: 50px;
+  border-radius: 50%;
+}
+#character-name input[type=text]{
+  height: 50px;
+  font-size: 28px;
+  border-radius: 10px;
+  font-family: inherit;
 }

@@ -36,12 +36,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var alignment = [];
 var _classes = [];
+var _races = [];
+var standardArr = [15, 14, 13, 12, 10, 8];
 console.log("has started");
+var testarr = [];
+//API URLs
 var apiClasses = 'https://www.dnd5eapi.co/api/classes/?results';
 var apiAlignment = 'https://www.dnd5eapi.co/api/alignments/?results';
-var getOptions = function () {
+var apiRaces = 'https://www.dnd5eapi.co/api/races/?results';
+//TEST
+var apiRacesTest = 'https://www.dnd5eapi.co/api/races/human?results';
+getOptions();
+function getOptions() {
     return __awaiter(this, void 0, void 0, function () {
-        var alignRes, align, alignmentOptions, i, option, classRes, _class, classOptions, i, option;
+        var alignRes, align, alignmentOptions, i, option, classRes, _class, classOptions, i, option, raceRes, race, raceOptions, i, option, testRes, testing, asOptions, i, j, opt;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch(apiAlignment)];
@@ -79,8 +87,51 @@ var getOptions = function () {
                         option.text = _classes[i].name;
                         classOptions === null || classOptions === void 0 ? void 0 : classOptions.appendChild(option);
                     }
+                    return [4 /*yield*/, fetch(apiRaces)];
+                case 5:
+                    raceRes = _a.sent();
+                    return [4 /*yield*/, raceRes.json()];
+                case 6:
+                    race = _a.sent();
+                    console.log(race);
+                    race.results.map(function (element) {
+                        _races.push(element);
+                        console.log('race fetch done');
+                    });
+                    //TestRace
+                    console.log('race done');
+                    raceOptions = document.querySelector("#racesSelect");
+                    for (i = 0; i < _races.length; i++) {
+                        option = new Option(_races[i].name);
+                        option.value = _races[i].name;
+                        option.text = _races[i].name;
+                        raceOptions === null || raceOptions === void 0 ? void 0 : raceOptions.appendChild(option);
+                    }
+                    return [4 /*yield*/, fetch(apiRacesTest)];
+                case 7:
+                    testRes = _a.sent();
+                    return [4 /*yield*/, testRes.json()];
+                case 8:
+                    testing = _a.sent();
+                    console.log(testing);
+                    testing.ability_bonuses.map(function (element) {
+                        testarr.push(element);
+                        console.log(testarr);
+                    });
+                    console.log('AB ' + testarr[0].bonus);
+                    console.log(standardArr);
+                    asOptions = document.getElementsByClassName("ab-score");
+                    console.log(asOptions);
+                    for (i = 0; i < standardArr.length; i++) {
+                        for (j = 0; j < standardArr.length; j++) {
+                            opt = new Option(standardArr[j].toString());
+                            opt.value = standardArr[j].toString();
+                            opt.text = standardArr[j].toString();
+                            asOptions[i].appendChild(opt);
+                        }
+                    }
                     return [2 /*return*/];
             }
         });
     });
-};
+}
