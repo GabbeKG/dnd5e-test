@@ -36,20 +36,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var alignment = [];
 var _classes = [];
+<<<<<<< HEAD
 var _races = [];
 var standardArr = [15, 14, 13, 12, 10, 8];
+=======
+var races = [];
+>>>>>>> 310496aedd8dd030b6c1a8511b1653d69a7dfd55
 console.log("has started");
 var testarr = [];
 //API URLs
 var apiClasses = 'https://www.dnd5eapi.co/api/classes/?results';
 var apiAlignment = 'https://www.dnd5eapi.co/api/alignments/?results';
 var apiRaces = 'https://www.dnd5eapi.co/api/races/?results';
+<<<<<<< HEAD
 //TEST
 var apiRacesTest = 'https://www.dnd5eapi.co/api/races/human?results';
 getOptions();
 function getOptions() {
     return __awaiter(this, void 0, void 0, function () {
         var alignRes, align, alignmentOptions, i, option, classRes, _class, classOptions, i, option, raceRes, race, raceOptions, i, option, testRes, testing, asOptions, i, j, opt;
+=======
+getOptions();
+function getOptions() {
+    return __awaiter(this, void 0, void 0, function () {
+        var alignRes, align, alignmentOptions, i, option, classRes, _class, classOptions, i, option, raceRes, race, raceOptions, i, option;
+>>>>>>> 310496aedd8dd030b6c1a8511b1653d69a7dfd55
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch(apiAlignment)];
@@ -95,6 +106,7 @@ function getOptions() {
                     race = _a.sent();
                     console.log(race);
                     race.results.map(function (element) {
+<<<<<<< HEAD
                         _races.push(element);
                         console.log('race fetch done');
                     });
@@ -130,6 +142,17 @@ function getOptions() {
                             asOptions[i].appendChild(opt);
                         }
                     }
+=======
+                        races.push(element);
+                    });
+                    raceOptions = document.querySelector("#raceSelect");
+                    for (i = 0; i < races.length; i++) {
+                        option = new Option(races[i].name);
+                        option.value = races[i].name;
+                        option.text = races[i].name;
+                        raceOptions === null || raceOptions === void 0 ? void 0 : raceOptions.appendChild(option);
+                    }
+>>>>>>> 310496aedd8dd030b6c1a8511b1653d69a7dfd55
                     return [2 /*return*/];
             }
         });

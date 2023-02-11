@@ -1,19 +1,14 @@
 var alignment: any[]= [];
 var _classes: any[] = [];
 var _races: any[] = [];
+var races:any[]=[];
 var standardArr: number[] = [15,14,13,12,10,8];
 console.log("has started")
 var testarr: any[] = [];
 //API URLs
 const apiClasses='https://www.dnd5eapi.co/api/classes/?results';
-const apiAlignment = 'https://www.dnd5eapi.co/api/alignments/?results';
-const apiRaces = 'https://www.dnd5eapi.co/api/races/?results'
-
-//TEST
-const apiRacesTest='https://www.dnd5eapi.co/api/races/human?results'
-
-getOptions();
-async function getOptions():Promise <void> {
+const apiAlignment='https://www.dnd5eapi.co/api/alignments/?results';
+const getOptions = async function() {
     //Alignment
   const alignRes = await fetch(apiAlignment);
   const align= await alignRes.json();
@@ -84,6 +79,22 @@ async function getOptions():Promise <void> {
   }
 }
 
+
+  //RACES
+   const raceRes = await fetch(apiRaces);
+  const race= await raceRes.json();
+  console.log(race);
+  race.results.map((element: any)=>{
+    races.push(element)
+  })
+  const raceOptions= document.querySelector("#raceSelect");
+  for(let i=0;i<races.length;i++){
+    var option=new Option(races[i].name);
+    option.value=races[i].name;
+    option.text=races[i].name;
+    raceOptions?.appendChild(option);
+  }
+}
 
 interface Character{
   _charName:string;
