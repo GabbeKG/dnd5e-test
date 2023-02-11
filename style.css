@@ -14,7 +14,7 @@ body {
 }
 .grid {
   display: grid;
-  grid-template-columns: 0.125fr;
+
   grid-template-areas:
     "hero hero hero hero hero hero hero hero hero"
     "hero hero hero hero hero hero hero hero hero"
@@ -41,14 +41,15 @@ body {
   text-align: center;
 }
 .grid > div {
-  background-color: rgb(90, 93, 95);
-  border: solid 10px rgb(122, 122, 122);
+  background-color: rgba(90, 93, 95, 0.8);
+  border: solid 10px rgba(122, 122, 122, 0.8);
 }
 #hero-section {
   grid-area: hero;
   height: 100px;
   border: solid 1px blue;
-  grid-row: 1/3;
+  grid-row: 1/2;
+  grid-column: 2 / span 2;
 }
 .stat-block {
   display: flex;
@@ -77,12 +78,16 @@ body {
   margin: 0 auto;
   position: relative;
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   line-height: 15px;
   background-color: rgb(90, 93, 95);
-  border: solid 10px rgb(122, 122, 122);
+  border: solid 2px rgb(122, 122, 122);
   /*outline: auto;*/
+}
+.ab-mod h2,
+.attribute h2 {
+  font-size: 12px;
 }
 .ab-mod:hover {
   box-shadow: rgb(255, 238, 0) 0px 0px 10px 5px;
@@ -98,7 +103,7 @@ body {
 }
 .passive-wisdom {
   grid-area: passive;
-  grid-row: 20;
+  grid-row: 7/13;
   border: solid 1px lightgreen;
 }
 .other-profs-and-languages {
@@ -134,5 +139,18 @@ body {
 }
 
 .attribute {
-  font-size: large;
+  font-size: medium;
+}
+.tooltip {
+  visibility: hidden;
+  text-align: center;
+  max-width: 500px;
+  position: absolute;
+  line-height: 20px;
+  z-index: 1;
+  padding: 10px;
+  background-color: rgb(43, 40, 40);
+}
+.info:hover .tooltip {
+  visibility: visible;
 }
